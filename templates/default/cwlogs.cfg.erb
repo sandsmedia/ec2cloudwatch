@@ -26,19 +26,22 @@ state_file = /var/awslogs/state/agent-state
 #datetime_format = %b %d %H:%M:%S
 #
 
-[<%= node[:opsworks][:stack][:name] %>]
-file = /srv/www/ct_nga_qa/current/logs/access.log
+[<%= node[:opsworks][:stack][:name] %>_access]
+datetime_format = [%Y-%m-%d %H:%M:%S]
 log_group_name = node.access.log
+file = /srv/www/ct_nga_qa/current/logs/access.log
 log_stream_name = <%= node[:opsworks][:instance][:hostname] %>
 
-[<%= node[:opsworks][:stack][:name] %>]
-file = /srv/www/ct_nga_qa/shared/log/node.stdout.log
+[<%= node[:opsworks][:stack][:name] %>_stdout]
+datetime_format = [%Y-%m-%d %H:%M:%S]
 log_group_name = node.stdout.log
+file = /srv/www/ct_nga_qa/shared/log/node.stdout.log
 log_stream_name = <%= node[:opsworks][:instance][:hostname] %>
 
-[<%= node[:opsworks][:stack][:name] %>]
-file = /srv/www/ct_nga_qa/shared/log/node.stderr.log
+[<%= node[:opsworks][:stack][:name] %>_stderr]
+datetime_format = [%Y-%m-%d %H:%M:%S]
 log_group_name = node.stderr.log
+file = /srv/www/ct_nga_qa/shared/log/node.stderr.log
 log_stream_name = <%= node[:opsworks][:instance][:hostname] %>
 
 #[<%= node[:opsworks][:stack][:name] %>]
