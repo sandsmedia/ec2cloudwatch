@@ -49,3 +49,5 @@ log_stream_name = <%= node[:opsworks][:instance][:hostname] %>_stderr
 #log_group_name = <%= node[:opsworks][:stack][:name].gsub(' ', '_') %>
 #file = <%= node[:cwlogs][:logfile] %>
 #log_stream_name = <%= node[:opsworks][:instance][:hostname] %>
+
+default[:opsworks_nodejs][:version] = '6.9.5'
