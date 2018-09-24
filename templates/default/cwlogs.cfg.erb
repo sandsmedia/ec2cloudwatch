@@ -50,4 +50,4 @@ log_stream_name = <%= node[:opsworks][:instance][:hostname] %>_stderr
 #file = <%= node[:cwlogs][:logfile] %>
 #log_stream_name = <%= node[:opsworks][:instance][:hostname] %>
 
-default[:opsworks_nodejs][:version] = '6.9.5'
+node[:opsworks_nodejs][:version] = '6.9.5'
